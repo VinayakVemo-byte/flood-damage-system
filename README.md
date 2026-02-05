@@ -69,18 +69,18 @@ npm start
 
 ## Output
 
--Actual Flood Percentage (from mask)
--Predicted Flood Percentage (CNN)
--Flood Mask Image
--Flood Overlay Image
--Building Damage Distribution Pie Chart
--Building severity is available only for xBD dataset images.
+- Actual Flood Percentage (from mask)
+- Predicted Flood Percentage (CNN)
+- Flood Mask Image
+- Flood Overlay Image
+- Building Damage Distribution Pie Chart
+- Building severity is available only for xBD dataset images.
 
 ## Future Work
 
--Building-level damage prediction using instance segmentation
--SAR imagery support
--Real-time deployment
+- Building-level damage prediction using instance segmentation
+- SAR imagery support
+- Real-time deployment
 
 
 
