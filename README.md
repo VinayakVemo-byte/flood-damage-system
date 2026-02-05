@@ -48,38 +48,40 @@ React UI
 ```bash
 cd ml
 python server.py
-Node Backend
+```
+
+### Node Backend
+
+```bash
 cd backend
 node index.js
-Frontend
+```
+
+### Frontend
+
+```bash
 cd frontend
 npm start
-Open browser at:
+```
+# Open browser at:
 
-http://localhost:3000
+  http://localhost:3000
 
-Output
-Actual Flood Percentage (from mask)
+## Output
 
-Predicted Flood Percentage (CNN)
+-Actual Flood Percentage (from mask)
+-Predicted Flood Percentage (CNN)
+-Flood Mask Image
+-Flood Overlay Image
+-Building Damage Distribution Pie Chart
+-Building severity is available only for xBD dataset images.
 
-Flood Mask Image
+## Future Work
 
-Flood Overlay Image
+-Building-level damage prediction using instance segmentation
+-SAR imagery support
+-Real-time deployment
 
-Building Damage Distribution Pie Chart
-
-Building severity is available only for xBD dataset images.
-
-Future Work
-Building-level damage prediction using instance segmentation
-
-SAR imagery support
-
-Real-time deployment
-
-Author
-Final Year Project
 
 
 Save.
