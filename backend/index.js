@@ -10,22 +10,25 @@ app.use(cors());
 
 const upload = multer({ dest: "uploads/" });
 
-app.post("/analyze", upload.fields([
-  { name: "sar" },
-  { name: "before" },
-  { name: "after" }
-]), async (req, res) => {
+app.post("/analyze",upload.fields([{name:"before"},{name:"after"}]),async(req,res)=>{
 
-  const form = new FormData();
-  form.append("sar", fs.createReadStream(req.files.sar[0].path));
-  form.append("before", fs.createReadStream(req.files.before[0].path));
-  form.append("after", fs.createReadStream(req.files.after[0].path));
+ const before=req.files.before[0];
+ const after=req.files.after[0];
 
-  const result = await axios.post("http://localhost:5000/analyze", form, {
-    headers: form.getHeaders()
-  });
+ const fd=new FormData();
 
-  res.json(result.data);
+ fd.append("before",fs.createReadStream(before.path));
+ fd.append("after",fs.createReadStream(after.path));
+
+ // IMPORTANT: send original filename
+ fd.append("after_name",after.originalname);
+
+ const r=await axios.post("http://localhost:5000/analyze",fd,{
+   headers:fd.getHeaders()
+ });
+
+ res.json(r.data);
 });
+
 
 app.listen(3001, () => console.log("Node running on 3001"));
